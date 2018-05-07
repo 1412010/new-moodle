@@ -43,8 +43,8 @@ hbsUtils.registerWatchedPartials(partialsDir);
 // });
 
 app.use("/", homeRouter);
-app.use("/student", studentRoute);
 app.use("/teacher", teacherRoute);
+app.use("/student", studentRoute);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
