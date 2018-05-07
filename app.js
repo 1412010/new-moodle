@@ -10,7 +10,7 @@ var hbsUtils = require("hbs-utils")(hbs);
 
 var homeRouter = require("./routes/home");
 var studentRoute = require("./routes/studentRoute");
-var teacherRoue = require("./routes/teacherRoute");
+var teacherRoute = require("./routes/teacherRoute");
 
 var app = express();
 
