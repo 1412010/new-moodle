@@ -5,18 +5,29 @@
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
-        <div></div>
-        <form class="form-inline my-2 my-lg-0" id="custom-search">
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        <div class="col-md-3"></div>
+        <form class="form-inline col-md-4" id="custom-search-input">
             <div class="input-group">
-                <input class="form-control mr-sm-2 search" placeholder="Tìm kiếm..." aria-label="Search">
+                <input class="form-control search-query" placeholder="Tìm kiếm..." aria-label="Search">
                 <div class="input-group-append">
-                    <button class="btn btn-danger" type="submit">
+                    <button class="btn btn-danger" type="button">
                         <i class="fa fa-search"></i>
                     </button>
                 </div>
             </div>
         </form>
-        <div></div>
+        <div class="col-md-5">
+            <div class="float-right mr-5">
+                <button class="btn btn-danger mr-3 rounded-circle" type="button">
+                    <i class="fa fa-bell"></i>
+                </button>
+
+                <button class="btn btn-danger rounded-circle" type="button">
+                    <i class="fa fa-user"></i>
+                </button>
+            </div>
+
+        </div>
     </div>
 </nav>

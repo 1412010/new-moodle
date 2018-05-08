@@ -51,9 +51,14 @@
 
 #custom-search-input {
   margin:0;
-  margin-top: 10px;
   padding: 0;
 }
+
+#custom-search-input .search-query {
+  width: 350px;
+  border-radius: 15px
+}
+
 #custom-search-input button {
   border: 0;
   background: none;
