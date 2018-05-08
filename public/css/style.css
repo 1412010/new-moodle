@@ -32,6 +32,25 @@
   overflow-y: auto;
 }
 
+.list-item {
+  padding: 1.5% 2.5% 1.5% 2.5%;
+  border-radius: 15px 15px 15px 15px;
+  background-color: #676CFB;
+  font-size: 150%;
+  color: white;
+}
+
+.list-item:hover{
+  background-color: #2568CA;
+}
+
+.circle-background {
+  width: 1.5em;
+  height: 1.5em;
+  text-align: center;
+  border-radius: 50%;
+}
+
 [role="main"] {
   padding-top: 30px
 }
