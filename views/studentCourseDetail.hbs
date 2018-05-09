@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Khóa học 1</title>
+    <link rel='stylesheet' href='/css/style.css' />
+    <link rel='stylesheet' href='/assets/bootstrap/dist/css/bootstrap.min.css' />
+    <link rel='stylesheet' href="/assets/fontawesome-all.min.css"/>
+</head>
+
+<body>
+    {{> navbar}}
+    <div class="container-fluid">
+        <div class="row">
+            {{> sidebar}} 
+            <main role="main" class="col-md-9 ml-sm-auto px-4"> 
+                <h1>Khóa học 1</h1>
+                <div style="margin-top: 3%; padding-left: 5%; padding-right: 5%;">
+                    <!-- THÔNG BÁO -->
+                    <button class="accordion">Thông báo</button>
+                    <div class="panel">
+                        Không có thông báo
+                    </div>
+                    <!-- TÀI LIỆU -->
+                    <button class="accordion">Tài liệu</button>
+                    <div class="panel">
+                        Không có tài liệu
+                    </div>
+                    <!-- BÀI TẬP -->
+                    <button class="accordion">Bài tập</button>
+                    <div class="panel">
+                        <!-- BÀI TẬP 2 -->
+                        <a href="/student/deadline/bt2">
+                            <div class="item-deadline">
+                                <span class="item-deadline-title">Bài tập 2</span>
+                                <br/>
+                                Hạn chót: 23h55 - 26/3/2018
+                                <br/>
+                                Trạng thái: Chưa nộp
+                            </div>
+                        </a>
+                        <!-- BÀI TẬP 1 -->
+                        <a href="/student/deadline/bt1">
+                            <div class="item-deadline-done">
+                                <span class="item-deadline-title">Bài tập 1</span>
+                                <br/>
+                                Hạn chót: 23h55 - 6/3/2018
+                                <br/>
+                                Trạng thái: Đã nộp
+                                <span style="margin-left: 5%;">Lần cập nhật cuối: 23h54 - 6/3/2018</span>
+                            </div>
+                        </a>
+                    </div> 
+                </div>
+            </main>
+        </div>
+    </div>
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
+    <script src="/assets/jquery-3.3.1.min.js"></script>
+    <script src="/assets/popper.min.js"></script>
+    <script src="/assets/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
