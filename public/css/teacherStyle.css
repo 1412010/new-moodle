@@ -1,0 +1,26 @@
+.contentMain {
+    margin-top: 4%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.contentCourse {
+    margin-top: 4%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.exercise {
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightgray;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.exeLab {
+    margin-bottom: 6px;
+    font-size: 20px;
+}
