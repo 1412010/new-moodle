@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bài tập 2</title>
+    <link rel='stylesheet' href='/css/style.css' />
+    <link rel='stylesheet' href='/assets/bootstrap/dist/css/bootstrap.min.css' />
+    <link rel='stylesheet' href="/assets/fontawesome-all.min.css"/>
+</head>
+
+<body>
+    {{> navbar}}
+    <div class="container-fluid">
+        <div class="row">
+            {{> sidebar}} 
+            <main role="main" class="col-md-9 ml-sm-auto px-4"> 
+                <!--THÔNG TIN BÀI TẬP-->
+                <h1>Bài tập 2</h1>
+                <div style="margin-top: 2%; font-size: 130%;">
+                    Hạn chót: 23h55 - 26/3/2018
+                    <br/>
+                    Trạng thái: Chưa nộp
+                    <br/>
+                    Nội dung bài tập: ...
+                </div>
+                <!-- KHUNG NỘP BÀI -->
+                <div style="margin: 5% 5% 0 5%;">
+                    <div style="background: #D9D9D9;padding: 1%;">
+                        <div style="background: #EFEFEF; text-align: center;padding: 6%;">
+                            Có thể thêm các tập tin bằng cách kéo thả
+                        </div>
+                    </div>
+                    <div style="display: flex; background: #CCCCCC; text-align: center;padding: 1%;">
+                        <div class="image-button">
+                            <div  class="fa fa-paperclip" style="font-size: 150%; padding-top: 3%;">
+                            </div>
+                            <div style="padding-bottom: 3%;">
+                                Thêm tập tin
+                            </div>
+                        </div>
+                        <div class="image-button" style="margin-left: 1%;">
+                            <div class="fa fa-link" style="font-size: 150%; padding-top: 3%;">
+                            </div>
+                            <div style="padding-bottom: 3%;">
+                                Chèn link
+                            </div>
+                        </div>
+                        <form action="/student/course/kh1" method="GET" style="margin-left: auto; margin-right: 0;">
+                            <button class="button" >Nộp bài</button>
+                        </form>
+                        <form action="/student/course/kh1" method="GET" style="margin-left: 1%; margin-right: 1%;">
+                            <button class="button">Hủy</button>
+                        </form>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="/assets/jquery-3.3.1.min.js"></script>
+    <script src="/assets/popper.min.js"></script>
+    <script src="/assets/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
