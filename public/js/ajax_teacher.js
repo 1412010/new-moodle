@@ -25,11 +25,26 @@ $(document).ready(function() {
 
     $('#data').on('click', '#editBt1' ,function (event) {
         event.preventDefault();
-        console.log('ok');
+        $("#data").load('/teacherTL/editExe.html');
+    });
+
+    $('#data').on('click', '#addExe' ,function (event) {
+        event.preventDefault();
+        $("#data").load('/teacherTL/addExe.html');
+    });
+
+    $('#data').on('click', '#backToCourse' ,function (event) {
+        event.preventDefault();
+        $("#data").load('/teacherTL/course.html');
     });
 
     $('#data').on('click', '#labBt1' ,function (event) {
         event.preventDefault();
         $("#data").load('/teacherTL/exeDetail.html');
+    });
+
+    $('#data').on('click', '#deleteExe' ,function (event) {
+        event.preventDefault();
+        $("#dialog-confirm").dialog("open");
     });
 });
