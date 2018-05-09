@@ -1,65 +1,68 @@
-<nav class="col-md-3 bg-light sidebar">
+<nav class="col-md-3 bg-light sidebar px-1">
   <div class="sidebar-sticky">
-    <ul class="nav flex-column">
-      <li class="nav-item">
-        <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showTz=0&amp;height=300&amp;wkst=2&amp;bgcolor=%23FFFFFF&amp;src=en.vietnamese%23holiday%40group.v.calendar.google.com&amp;color=%23B1365F&amp;ctz=Asia%2FSaigon" style="border-width:0" width="100%" height="300" frameborder="0" scrolling="no"></iframe>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
-            <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
-            <polyline points="13 2 13 9 20 9"></polyline>
-          </svg>
-          Orders
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart">
-            <circle cx="9" cy="21" r="1"></circle>
-            <circle cx="20" cy="21" r="1"></circle>
-            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-          </svg>
-          Products
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round" class="feather feather-users">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-            <circle cx="9" cy="7" r="4"></circle>
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-          </svg>
-          Customers
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart-2">
-            <line x1="18" y1="20" x2="18" y2="10"></line>
-            <line x1="12" y1="20" x2="12" y2="4"></line>
-            <line x1="6" y1="20" x2="6" y2="14"></line>
-          </svg>
-          Reports
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers">
-            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-            <polyline points="2 17 12 22 22 17"></polyline>
-            <polyline points="2 12 12 17 22 12"></polyline>
-          </svg>
-          Integrations
-        </a>
-      </li>
-    </ul>
-    
+
+    <div class="" id="accordionExample">
+
+      {{!-- Dropdown Điều hướng --}}
+      <div class="card mb-2">
+        <div class="card-header bg-primary" id="headingOne">
+          <h5 class="mb-0">
+            <button class="btn btn-primary text-white text-left w-100" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false"
+              aria-controls="collapseOne">
+              Điều hướng
+            </button>
+          </h5>
+        </div>
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne">
+          <div class="card-body">
+            <h5>
+              <a href="/student">Trang của tôi</a>
+            </h5>
+            <h5>
+              <a href="#">Tất cả khóa học</a>
+            </h5>
+          </div>
+        </div>
+      </div>
+
+      {{!-- Dropdown Lịch --}}
+      <div class="card mb-2">
+        <div class="card-header bg-primary" id="headingTwo">
+          <button class="btn btn-primary text-white text-left w-100" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+            aria-controls="collapseTwo">
+            Lịch
+          </button>
+          </h5>
+        </div>
+        <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo">
+          <div class="card-body p-0">
+            <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showTz=0&amp;height=300&amp;wkst=2&amp;bgcolor=%23FFFFFF&amp;src=en.vietnamese%23holiday%40group.v.calendar.google.com&amp;color=%23B1365F&amp;ctz=Asia%2FSaigon"
+              style="border-width:0" width="100%" height="300" frameborder="0" scrolling="no"></iframe>
+          </div>
+        </div>
+      </div>
+
+      {{!-- Dropdown DS Môn học --}}
+      <div class="card mb-2">
+        <div class="card-header bg-primary" id="headingThree">
+          <h5 class="mb-0">
+            <button class="btn btn-primary text-white text-left w-100" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+              aria-controls="collapseThree">
+              Danh sách khóa học
+            </button>
+          </h5>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree">
+          <div class="card-body">
+            <h5>
+              <a href="/student">Khóa học 1</a>
+            </h5>
+            <h5>
+              <a href="#">Khóa học 2</a>
+            </h5>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </nav>
