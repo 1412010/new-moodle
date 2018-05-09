@@ -38,7 +38,7 @@ a {
 
 .list-item {
   padding: 1.5% 2.5% 1.5% 2.5%;
-  border-radius: 15px 15px 15px 15px;
+  border-radius: 15px;
   background-color: #676CFB;
   font-size: 150%;
   color: white;
@@ -72,6 +72,7 @@ a {
   text-align: left;
   border: none;
   outline: none;
+  border-radius: 15px;
 }
 
 .accordion:after {
