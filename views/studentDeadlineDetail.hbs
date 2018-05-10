@@ -26,7 +26,8 @@
                 <!-- KHUNG NỘP BÀI -->
                 <div style="margin: 5% 5% 0 5%;">
                     <div style="background: #D9D9D9;padding: 1%;">
-                        <div style="background: #EFEFEF; text-align: center;padding: 6%;">
+                        <!-- VÙNG KÉO THẢ FILE -->
+                        <div id="drop-zone" class="drop-zone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);" ondragleave="dragLeaveHandler(event)">
                             Có thể thêm các tập tin bằng cách kéo thả
                         </div>
                     </div>
@@ -46,7 +47,7 @@
                             </div>
                         </div>
                         <form action="/student/course/kh1" method="GET" style="margin-left: auto; margin-right: 0;">
-                            <button class="button" >Nộp bài</button>
+                            <button id="submit-button" class="button" disabled>Nộp bài</button>
                         </form>
                         <form action="/student/course/kh1" method="GET" style="margin-left: 1%; margin-right: 1%;">
                             <button class="button">Hủy</button>
@@ -56,6 +57,67 @@
             </main>
         </div>
     </div>
+    <script>
+        function dropHandler(ev) {
+            console.log('File(s) dropped');
+
+            // Prevent default behavior (Prevent file from being opened)
+            ev.preventDefault();
+
+            document.getElementById("submit-button").disabled = false;
+            document.getElementById("drop-zone").innerHTML = "";
+            
+            if (ev.dataTransfer.items) {
+                // Use DataTransferItemList interface to access the file(s)
+                for (var i = 0; i < ev.dataTransfer.items.length; i++) {
+                    // If dropped items aren't files, reject them
+                    if (ev.dataTransfer.items[i].kind === 'file') {
+                        var file = ev.dataTransfer.items[i].getAsFile();
+                        console.log('... file[' + i + '].name = ' + file.name);
+                        document.getElementById("drop-zone").innerHTML += file.name + "<br/>";
+                    }
+                }
+            } else {
+                // Use DataTransfer interface to access the file(s)
+                for (var i = 0; i < ev.dataTransfer.files.length; i++) {
+                    console.log('... file[' + i + '].name = ' + ev.dataTransfer.files[i].name);
+                    document.getElementById("drop-zone").innerHTML += ev.dataTransfer.files[i].name + "<br/>";
+                }
+            }
+
+            // Pass event to removeDragData for cleanup
+            removeDragData(ev)
+        }
+
+        function dragOverHandler(ev) {
+            console.log('File(s) in drop zone'); 
+            // Prevent default behavior (Prevent file from being opened)
+
+            ev.preventDefault();
+            ev.target.className = "drop-zone-hover";
+        }
+
+        function dragLeaveHandler(ev) {
+            console.log('File(s) in leave zone'); 
+            // Prevent default behavior (Prevent file from being opened)
+
+            ev.preventDefault();
+            ev.target.className = "drop-zone";
+        }
+
+        function removeDragData(ev) {
+            console.log('Removing drag data')
+            
+            if (ev.dataTransfer.items) {
+                // Use DataTransferItemList interface to remove the drag data
+                ev.dataTransfer.items.clear();
+            } else {
+                // Use DataTransfer interface to remove the drag data
+                ev.dataTransfer.clearData();
+            }
+        }
+    </script>
+
     <script src="/assets/jquery-3.3.1.min.js"></script>
     <script src="/assets/popper.min.js"></script>
     <script src="/assets/bootstrap/dist/js/bootstrap.min.js"></script>
