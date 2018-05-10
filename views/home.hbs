@@ -8,17 +8,42 @@
 
     <title>{{title}}</title>
     <link rel='stylesheet' href='/css/style.css' />
+    <link rel='stylesheet' href="/assets/fontawesome-all.min.css" />
     <link rel='stylesheet' href='/assets/bootstrap/dist/css/bootstrap.min.css' />
 </head>
 
-<body>
+<body class="text-center home-body">
+    <i class="fa fa-laptop text-white" style="font-size: 4.5em"></i>
+    <h1 class="text-white">Chào mừng bạn đến với Moodle!</h1>
+    <div class="card shadow-lg" style="width: 30%">
+        <div class="card-body">
+            <form class="form-signin pt-3">
+                <input type="text" id="inputUser" class="form-control form-control-lg mb-3" placeholder="Tên tài khoản" required="" autofocus="">
+                <input type="password" id="inputPassword" class="form-control form-control-lg mb-3" placeholder="Mật khẩu" required="">
+                <div class="checkbox float-left">
+                    <label>
+                        <input type="checkbox" value="remember-me"> Ghi nhớ đăng nhập
+                    </label>
+                </div>
+                <br>
+                <p class="float-left" style="color: red; font-size: 100%" hidden id="warning">Tài khoản hoặc mật khẩu không đúng</p>
+                <button class="btn btn-lg btn-primary btn-block mt-2 mb-3" type="submit">Sign in</button>
+                <a href="#">Quên tài khoản hoặc mật khẩu?</a>
+                <br>
+                <a href="#">Trợ giúp</a>
+            </form>
+        </div>
+    </div>
+
+    {{!--
     <h1>Sign in page</h1>
     <a href="/student">to student's page</a>
     <br>
-    <a href="/teacher">to teacher's page</a>
+    <a href="/teacher">to teacher's page</a> --}}
     <script src="/assets/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
     <script src="/assets/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/js/signin.js"></script>
 </body>
-
 </html>
