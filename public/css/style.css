@@ -137,6 +137,18 @@ a {
  background: #EFEFEF;
 }
 
+.drop-zone {
+  background: #EFEFEF;
+  text-align: center;
+  padding: 6%;
+}
+
+.drop-zone-hover {
+  background: #6BCDFE;
+  text-align: center;
+  padding: 6%;
+}
+
 [role="main"] {
   padding-top: 30px
 }
