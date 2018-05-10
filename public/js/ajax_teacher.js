@@ -23,7 +23,7 @@ $(document).ready(function() {
         }
     });
 
-    $('#data').on('click', '#editBt1' ,function (event) {
+    $('#data').on('click', 'button#editBt1' ,function (event) {
         event.preventDefault();
         $("#data").load('/teacherTL/editExe.html');
     });

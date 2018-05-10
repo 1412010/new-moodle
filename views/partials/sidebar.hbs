@@ -5,15 +5,16 @@
 
       {{!-- Dropdown Điều hướng --}}
       <div class="card mb-2">
-        <div class="card-header bg-primary" id="headingOne">
+        <div class="card-header bg-primary p-0" id="headingOne">
           <h5 class="mb-0">
-            <button class="btn btn-primary text-white text-left w-100" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false"
+            <button class="btn btn-primary text-white text-left w-100 p-3" type="button" data-toggle="collapse" data-target="#collapeDieuHuong" aria-expanded="false"
               aria-controls="collapseOne">
               Điều hướng
+              <i class="fa fa-chevron-down float-right mt-2"></i>
             </button>
           </h5>
         </div>
-        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne">
+        <div id="collapeDieuHuong" class="collapse show" aria-labelledby="headingOne">
           <div class="card-body">
             <h5>
               <a href="/student">Trang của tôi</a>
@@ -27,14 +28,15 @@
 
       {{!-- Dropdown Lịch --}}
       <div class="card mb-2">
-        <div class="card-header bg-primary" id="headingTwo">
-          <button class="btn btn-primary text-white text-left w-100" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+        <div class="card-header bg-primary p-0" id="headingTwo">
+          <button class="btn btn-primary text-white text-left w-100 p-3" type="button" data-toggle="collapse" data-target="#collapeLich" aria-expanded="false"
             aria-controls="collapseTwo">
             Lịch
+              <i class="fa fa-chevron-down float-right mt-2"></i>
           </button>
           </h5>
         </div>
-        <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo">
+        <div id="collapeLich" class="collapse show" aria-labelledby="headingTwo">
           <div class="card-body p-0">
             <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showTz=0&amp;height=300&amp;wkst=2&amp;bgcolor=%23FFFFFF&amp;src=en.vietnamese%23holiday%40group.v.calendar.google.com&amp;color=%23B1365F&amp;ctz=Asia%2FSaigon"
               style="border-width:0" width="100%" height="300" frameborder="0" scrolling="no"></iframe>
@@ -44,15 +46,17 @@
 
       {{!-- Dropdown DS Môn học --}}
       <div class="card mb-2">
-        <div class="card-header bg-primary" id="headingThree">
+        <div class="card-header bg-primary p-0" id="headingThree">
           <h5 class="mb-0">
-            <button class="btn btn-primary text-white text-left w-100" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+            <button class="btn btn-primary text-white text-left w-100 p-3" type="button" data-toggle="collapse" data-target="#collapseMonHoc" aria-expanded="false"
               aria-controls="collapseThree">
               Danh sách khóa học
+              <i class="fa fa-chevron-down float-right mt-2"></i>
             </button>
           </h5>
+          
         </div>
-        <div id="collapseThree" class="collapse" aria-labelledby="headingThree">
+        <div id="collapseMonHoc" class="collapse" aria-labelledby="headingThree">
           <div class="card-body">
             <h5>
               <a href="/student">Khóa học 1</a>
