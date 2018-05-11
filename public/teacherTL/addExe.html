@@ -1,28 +1,59 @@
 <div class="row" id="title">
-    <input class="col-md-5 form-control exeName ml-3" placeholder="Tên bài tập" type="text">
+    <div class="col-md-5">
+        <input class="form-control exeName" placeholder="Tên bài tập" type="text">
+    </div>
     <div class="col-md-4"></div>
-    <span class="ml-3 col-md-2" style="text-align: right">
-        <h1>
-            <i style="color: greenyellow;" class="fas fa-check"></i>
-            <i  id="backToCourse" class="far fa-arrow-alt-circle-left"></i>
-        </h1>
+    <span class="col-md-3" style="text-align: right">
+        <span class="btn btn-light">
+                <h3><i id="okAddExe" style="color: greenyellow;" class="fas fa-check"></i></h3>
+        </span>
+        <span class="btn btn-light">
+                <h3><i  id="backToCourse" class="far fa-arrow-alt-circle-left"></i></h3>
+        </span>
     </span>
 </div>
+<script>
+    $(function() {
+        $("#confirm_addExe").dialog({
+            resizable: false,
+            height: "auto",
+            width: 400,
+            modal: true,
+            autoOpen: false,
+            buttons: {
+            "Yes": function() {
+                $( this ).dialog( "close" );
+                $("#data").load('/teacherTL/course.html');
+            },
+            "No": function() {
+                $( this ).dialog( "close" );
+            }
+        }
+        });
+    });
+</script>
+<div id="confirm_addExe" title="Thêm bài tập">
+    </span>Bạn muốn thêm bài tập này?</p>
+</div>
 <div class="contentCourse" style="font-size: 18px;">
-    <p>
-        <div class="row">
-        <span class="col-md-2">Hạn chót:</span>
-        <input class="col-md-3 form-control" type="date">
-        <span class="col-md-1">Giờ:</span>
-        <input class="col-md-1 form-control" type="number" min="0" max="23">
-        <span class="col-md-1">Phút:</span>
-        <input class="col-md-1 form-control" type="number" min="0" max="59">
+    <div class="card">
+        <div class="card-body">
+            <p>
+                <div class="row">
+                <span class="col-md-2">Hạn chót:</span>
+                <input class="col-md-3 form-control" type="date">
+                <span class="col-md-1">Giờ:</span>
+                <input class="col-md-1 form-control" type="number" min="0" max="23">
+                <span class="col-md-1">Phút:</span>
+                <input class="col-md-1 form-control" type="number" min="0" max="59">
+                </div>
+            </p>
+            <div class="row">
+                <span class="col-md-2">Nội dung:</span>
+                <textarea class="form-control col-md-9" rows="4" placeholder="Nhập nội dung"></textarea>
+            </div>
+            <p>Tài liệu:</p>
+            <div></div>
         </div>
-    </p>
-    <div class="row">
-        <span class="col-md-2">Nội dung:</span>
-        <textarea class="form-control col-md-9" rows="4" placeholder="Nhập nội dung"></textarea>
     </div>
-    <p>Tài liệu:</p>
-    <div></div>
 </div>

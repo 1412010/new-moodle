@@ -1,17 +1,23 @@
 <div class="row" id="title">
-        <input class="col-md-5 form-control exeName ml-3" placeholder="Tên bài tập" value="Bài tập A" type="text">
+        <div class="col-md-5">
+            <input class="form-control exeName" placeholder="Tên bài tập" value="Bài tập A" type="text">
+        </div>
         <div class="col-md-3"></div>
-        <span class="col-md-3" style="text-align: right">
-            <h1>
-                <i style="color: greenyellow;" class="fas fa-check"></i>
-                <i id="deleteExe" style="color: red;" class="far fa-trash-alt"></i>
-                <i  id="backToCourse" class="far fa-arrow-alt-circle-left"></i>
-            </h1>
+        <span class="col-md-4" style="text-align: right">
+                <span class="btn btn-light">
+                        <h3><i id="applyEditExe" style="color: greenyellow;" class="fas fa-check"></i></h3>
+                </span>
+                <span class="btn btn-light">
+                        <h3><i id="deleteExe" style="color: red;" class="far fa-trash-alt"></i></h3>
+                </span>
+                <span class="btn btn-light">
+                        <h3><i  id="backToCourse" class="far fa-arrow-alt-circle-left"></i></h3>
+                </span>
         </span>
 </div>
 <script>
-$( function() {
-    $( "#dialog-confirm" ).dialog({
+$(function() {
+    $("#confirm_delete").dialog({
       resizable: false,
       height: "auto",
       width: 400,
@@ -27,26 +33,52 @@ $( function() {
         }
       }
     });
-  } );
+  });
+$(function() {
+$("#confirm_edit").dialog({
+    resizable: false,
+    height: "auto",
+    width: 400,
+    modal: true,
+    autoOpen: false,
+    buttons: {
+    "Yes": function() {
+        $( this ).dialog( "close" );
+        $("#data").load('/teacherTL/course.html');
+    },
+    "No": function() {
+        $( this ).dialog( "close" );
+    }
+    }
+});
+});
 </script>
-<div id="dialog-confirm" title="Xóa bài tập">
-        <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>Bạn có muốn xóa bài tập này không?</p>
+<div id="confirm_delete" title="Xóa bài tập">
+        </span>Bạn có muốn xóa bài tập này không?</p>
+</div>
+<div id="confirm_edit" title="Sửa bài tập">
+    </span>Bạn muốn thay đổi bài tập này?</p>
 </div>
 <div class="contentCourse" style="font-size: 18px;">
-    <p>
-        <div class="row">
-        <span class="col-md-2">Hạn chót:</span>
-        <input class="col-md-3 form-control" type="date" value="2018-04-01">
-        <span class="col-md-1">Giờ:</span>
-        <input class="col-md-1 form-control" type="number" min="0" max="23" value="23">
-        <span class="col-md-1">Phút:</span>
-        <input class="col-md-1 form-control" type="number" min="0" max="59" value="55">
+    <div class="card">
+        <div class="card-body">
+            <p>
+                <div class="row">
+                <span class="col-md-2">Hạn chót:</span>
+                <input class="col-md-3 form-control" type="date" value="2018-04-01">
+                <span class="col-md-1">Giờ:</span>
+                <input class="col-md-1 form-control" type="number" min="0" max="23" value="23">
+                <span class="col-md-1">Phút:</span>
+                <input class="col-md-1 form-control" type="number" min="0" max="59" value="55">
+                </div>
+            </p>
+            <div class="row">
+                <span class="col-md-2">Nội dung:</span>
+                <textarea class="form-control col-md-9" rows="5" placeholder="Nhập nội dung">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </textarea>
+            </div>
+            <p>Tài liệu:</p>
+            <div></div>
         </div>
-    </p>
-    <div class="row">
-        <span class="col-md-2">Nội dung:</span>
-        <textarea class="form-control col-md-9" rows="4" placeholder="Nhập nội dung">lorem...</textarea>
     </div>
-    <p>Tài liệu:</p>
-    <div></div>
 </div>

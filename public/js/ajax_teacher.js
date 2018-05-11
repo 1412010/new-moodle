@@ -45,6 +45,16 @@ $(document).ready(function() {
 
     $('#data').on('click', '#deleteExe' ,function (event) {
         event.preventDefault();
-        $("#dialog-confirm").dialog("open");
+        $("#confirm_delete").dialog("open");
+    });
+
+    $('#data').on('click', '#applyEditExe' ,function (event) {
+        event.preventDefault();
+        $("#confirm_edit").dialog("open");
+    });
+
+    $('#data').on('click', '#okAddExe' ,function (event) {
+        event.preventDefault();
+        $("#confirm_addExe").dialog("open");
     });
 });

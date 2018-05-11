@@ -5,9 +5,7 @@
 }
 
 .contentCourse {
-    margin-top: 4%;
-    padding-left: 2%;
-    padding-right: 2%;
+    margin-top: 2%;
 }
 
 .exercise {
@@ -26,10 +24,6 @@
 }
 
 .exeName {
-    font-size: 20px; 
+    font-size: 26px; 
     font-weight: bold;
-    padding-bottom: 0px;
-    padding-top: 0px;
-    padding-left: 5px;
-    padding-right: 5px;
 }
