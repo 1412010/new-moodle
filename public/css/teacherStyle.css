@@ -32,3 +32,31 @@
     padding-top: 6px;
     padding-bottom: 6px;
 }
+
+.docZone {
+    margin: 2% 5% 0 5%;
+}
+
+.dropZone {
+    background: #D9D9D9;
+    padding: 1%;
+}
+
+.docButtonZone {
+    display: flex;
+    background: #CCCCCC;
+    text-align: center;
+}
+
+.docIcon {
+    font-size: 150%;
+    padding-top: 3%;
+}
+
+.docIconLabel {
+    padding-bottom: 3%;
+}
+
+.docIconMargin {
+    margin-left: 1%;
+}
