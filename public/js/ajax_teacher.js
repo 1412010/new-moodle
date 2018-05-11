@@ -23,6 +23,11 @@ $(document).ready(function() {
         }
     });
 
+    $('#data').on('click', '#backToMain' ,function (event) {
+        event.preventDefault();
+        $("#data").load('/teacherTL/main.html');
+    });
+
     $('#data').on('click', 'button#editBt1' ,function (event) {
         event.preventDefault();
         $("#data").load('/teacherTL/editExe.html');
