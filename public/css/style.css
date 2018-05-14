@@ -6,6 +6,10 @@
 /* a {
   color: #00B7FF;
 } */
+html, body {
+  min-height: 800px;
+  position: relative;
+}
 
 a {
   text-decoration: none;
@@ -199,11 +203,6 @@ a {
   z-index: 3;
 }
 
-html,
-body {
-  height: 100%;
-}
-
 body.home-body {
   /* display: -ms-flexbox;
   display: -webkit-box; */
@@ -225,7 +224,10 @@ body.home-body {
   margin: 0 auto;
 }
 
-footer {
+.footer {
   background-color: #6BCDFE;
+  position: absolute;
   width: 100%;
+  bottom: 0;
+  left: 0;
 }
