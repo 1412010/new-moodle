@@ -4,11 +4,11 @@
     </div>
     <div class="col-md-4"></div>
     <span class="col-md-3" style="text-align: right">
-        <span class="btn btn-light">
-                <h3><i id="okAddExe" style="color: greenyellow;" class="fas fa-check"></i></h3>
+        <span class="btn btn-light" id="okAddExe">
+                <h3><i style="color: greenyellow;" class="fas fa-check"></i></h3>
         </span>
-        <span class="btn btn-light">
-                <h3><i  id="backToCourse" class="far fa-arrow-alt-circle-left"></i></h3>
+        <span class="btn btn-light" id="backToCourse">
+                <h3><i class="far fa-arrow-alt-circle-left"></i></h3>
         </span>
     </span>
 </div>
@@ -23,7 +23,7 @@
             buttons: {
             "Yes": function() {
                 $( this ).dialog( "close" );
-                $("#data").load('/teacherTL/course.html');
+                loadCourse();
             },
             "No": function() {
                 $( this ).dialog( "close" );

@@ -1,10 +1,10 @@
 $(document).ready(function() {
     $('#data').ready(function() {
-        $("#data").load('/teacherTL/main.html');
+        loadMain();
     });
 
     $('#data').on('click', '#kh1' ,function () {
-        $("#data").load('/teacherTL/course.html');
+        loadCourse();
     });
 
     $('#data').on('click', '#editMode' ,function () {
@@ -25,27 +25,27 @@ $(document).ready(function() {
 
     $('#data').on('click', '#backToMain' ,function (event) {
         event.preventDefault();
-        $("#data").load('/teacherTL/main.html');
+        loadMain();
     });
 
     $('#data').on('click', 'button#editBt1' ,function (event) {
         event.preventDefault();
-        $("#data").load('/teacherTL/editExe.html');
+        loadEditExe();
     });
 
     $('#data').on('click', '#addExe' ,function (event) {
         event.preventDefault();
-        $("#data").load('/teacherTL/addExe.html');
+        loadAddExe();
     });
 
     $('#data').on('click', '#backToCourse' ,function (event) {
         event.preventDefault();
-        $("#data").load('/teacherTL/course.html');
+        loadCourse();
     });
 
     $('#data').on('click', '#labBt1' ,function (event) {
         event.preventDefault();
-        $("#data").load('/teacherTL/exeDetail.html');
+        loadExeDetail();
     });
 
     $('#data').on('click', '#deleteExe' ,function (event) {

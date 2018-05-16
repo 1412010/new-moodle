@@ -4,36 +4,36 @@
         </div>
         <div class="col-md-3"></div>
         <span class="col-md-4" style="text-align: right">
-                <span class="btn btn-light">
-                        <h3><i id="applyEditExe" style="color: greenyellow;" class="fas fa-check"></i></h3>
+                <span class="btn btn-light" id="applyEditExe">
+                        <h3><i style="color: greenyellow;" class="fas fa-check"></i></h3>
                 </span>
-                <span class="btn btn-light">
-                        <h3><i id="deleteExe" style="color: red;" class="far fa-trash-alt"></i></h3>
+                <span class="btn btn-light" id="deleteExe">
+                        <h3><i style="color: red;" class="far fa-trash-alt"></i></h3>
                 </span>
-                <span class="btn btn-light">
-                        <h3><i  id="backToCourse" class="far fa-arrow-alt-circle-left"></i></h3>
+                <span class="btn btn-light" id="backToCourse">
+                        <h3><i  class="far fa-arrow-alt-circle-left"></i></h3>
                 </span>
         </span>
 </div>
 <script>
 $(function() {
-    $("#confirm_delete").dialog({
-      resizable: false,
-      height: "auto",
-      width: 400,
-      modal: true,
-      autoOpen: false,
-      buttons: {
-        "Yes": function() {
-          $( this ).dialog( "close" );
-          $("#data").load('/teacherTL/course.html');
-        },
-        "No": function() {
-          $( this ).dialog( "close" );
-        }
-      }
-    });
-  });
+        $("#confirm_delete").dialog({
+          resizable: false,
+          height: "auto",
+          width: 400,
+          modal: true,
+          autoOpen: false,
+          buttons: {
+            "Yes": function() {
+              $( this ).dialog( "close" );
+              loadCourse();
+            },
+            "No": function() {
+              $( this ).dialog( "close" );
+            }
+          }
+        });
+});
 $(function() {
 $("#confirm_edit").dialog({
     resizable: false,
@@ -44,7 +44,7 @@ $("#confirm_edit").dialog({
     buttons: {
     "Yes": function() {
         $( this ).dialog( "close" );
-        $("#data").load('/teacherTL/course.html');
+        loadCourse();
     },
     "No": function() {
         $( this ).dialog( "close" );
