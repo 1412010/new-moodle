@@ -6,15 +6,15 @@
     <link rel='stylesheet' href='/css/style.css' />
     <link rel='stylesheet' href='/css/breadcrumbs.css' />
     <link rel='stylesheet' href='/assets/bootstrap/dist/css/bootstrap.min.css' />
-    <link rel='stylesheet' href="/assets/fontawesome-all.min.css"/>
+    <link rel='stylesheet' href="/assets/fontawesome-all.min.css" />
 </head>
 
-<body>
+<body class="body-h900">
     {{> navbar}}
     <div class="container-fluid  mt-5">
         <div class="row">
-            {{> sidebar}} 
-            <main role="main" class="col-md-9 ml-sm-auto px-4"> 
+            {{> sidebar}}
+            <main role="main" class="col-md-9 ml-sm-auto px-4">
                 {{!-- Breadcrumb --}}
                 <ul id="breadcrumb">
                     <li>
@@ -28,21 +28,98 @@
                 </ul>
 
                 <h1>Khóa học 1</h1>
-                <div style="margin-top: 3%; padding-left: 5%; padding-right: 5%;">
-                    <!-- THÔNG BÁO -->
-                    <button class="accordion" id="accordionBTN">Thông báo</button>
-                    <div class="panel">
-                        <div style="text-align: center;margin-top: 1%;font-size: 120%;">
-                            Không có thông báo
+
+                <div class="contentCourse">
+
+                    <!-- {{!-- Dropdown Thông báo --}} -->
+                    <div class="card mb-3 border-success">
+                        <div class="card-header bg-info p-0" id="headingOne">
+                            <h5 class="mb-0">
+                                <button class="btn btn-info text-white text-left w-100 p-3" type="button" data-toggle="collapse" data-target="#collapeThongBao"
+                                    aria-expanded="false" aria-controls="collapseOne">
+                                    Thông báo
+                                    <i class="fa fa-chevron-down float-right mt-2"></i>
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapeThongBao" class="collapse" aria-labelledby="headingOne">
+                            <div class="card-body">
+                                Không có thông báo.
+                            </div>
                         </div>
                     </div>
-                    <!-- TÀI LIỆU -->
-                    <button class="accordion" id="accordionBTN">Tài liệu</button>
-                    <div class="panel">
-                        <div style="text-align: center;margin-top: 1%;font-size: 120%;">
-                            Không có tài liệu
+
+                    <!-- {{!-- Dropdown Tài liệu --}} -->
+                    <div class="card mb-3 border-success">
+                        <div class="card-header bg-primary p-0" id="headingOne">
+                            <h5 class="mb-0">
+                                <button class="btn btn-info text-white text-left w-100 p-3" type="button" data-toggle="collapse" data-target="#collapeTaiLieu"
+                                    aria-expanded="false" aria-controls="collapseOne">
+                                    Tài liệu
+                                    <i class="fa fa-chevron-down float-right mt-2"></i>
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapeTaiLieu" class="collapse" aria-labelledby="headingOne">
+                            <div class="card-body">
+                                Không có tài liệu.
+                            </div>
                         </div>
                     </div>
+
+                    <!-- {{!-- Dropdown Bài tập --}} -->
+                    <div class="card mb-3 border-success">
+                        <div class="card-header bg-primary p-0" id="headingOne">
+                            <h3 class="mb-0">
+                                <button class="btn btn-info text-white text-left w-100 p-3" type="button" data-toggle="collapse" data-target="#collapseBaiTap"
+                                    aria-expanded="false" aria-controls="collapseOne">
+                                    Bài tập
+                                    <i class="fa fa-chevron-down float-right mt-2"></i>
+                                </button>
+                            </h3>
+                        </div>
+
+                        <div id="collapseBaiTap" class="collapse show" aria-labelledby="headingOne">
+                            <div class="card-body">
+
+                                {{!-- Bài tập 2 --}}
+                                <a class="card mb-2 item-deadline" style="cursor: pointer;" href="/student/deadline/bt2">
+                                    <div class="card-body item-deadline">
+                                        <div class="card-title">
+                                            <h5 id="labBt1">
+                                                Bài tập 2
+                                            </h5>
+
+                                        </div>
+                                        <div class="card-text" id="labBt1" style="cursor: pointer;">
+                                            <p>Hạn chót: 23h55 - 26/3/2018</p>
+                                            <span class="col-md-9 col-sm-7 pl-0">Trạng thái: Chưa nộp</span>
+                                        </div>
+                                    </div>
+                                </a>
+
+                                {{!-- Bài tập 1 --}}
+                                <a class="card mb-2 item-deadline-done" style="cursor: pointer;" href="/student/deadline/bt1">
+                                    <div class="card-body">
+                                        <div class="card-title">
+                                            <h5 id="labBt1">
+                                                Bài tập 1
+                                            </h5>
+                                        </div>
+                                        <div class="card-text" id="labBt1" style="cursor: pointer;">
+                                            <p>Hạn chót: 23h55 - 6/3/2018</p>
+                                            <p>Trạng thái: Đã nộp <span style="margin-left: 5%;">Lần cập nhật cuối: 23h54 - 6/3/2018</span></p>   
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                {{!-- <div style="margin-top: 3%; padding-left: 5%; padding-right: 5%;">
+
                     <!-- BÀI TẬP -->
                     <button class="accordion" id="accordionBTN">Bài tập</button>
                     <div class="panel">
@@ -50,33 +127,43 @@
                         <a href="/student/deadline/bt2">
                             <div class="item-deadline">
                                 <span class="item-deadline-title">Bài tập 2</span>
-                                <br/>
-                                Hạn chót: 23h55 - 26/3/2018
-                                <br/>
-                                Trạng thái: Chưa nộp
+                                <br/> Hạn chót: 23h55 - 26/3/2018
+                                <br/> Trạng thái: Chưa nộp
                             </div>
                         </a>
                         <!-- BÀI TẬP 1 -->
                         <a href="/student/deadline/bt1">
                             <div class="item-deadline-done">
                                 <span class="item-deadline-title">Bài tập 1</span>
-                                <br/>
-                                Hạn chót: 23h55 - 6/3/2018
-                                <br/>
-                                Trạng thái: Đã nộp
+                                <br/> Hạn chót: 23h55 - 6/3/2018
+                                <br/> Trạng thái: Đã nộp
                                 <span style="margin-left: 5%;">Lần cập nhật cuối: 23h54 - 6/3/2018</span>
                             </div>
                         </a>
-                    </div> 
-                </div>
+                    </div>
+                </div> --}}
             </main>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="row">
+            <div class="col-md text-center">
+                <h4 class="">
+                    <a class="text-white" href="#">Hỗ trợ</a>
+                </h4>
+            </div>
+            <div class="col-md text-center">
+                <h4 class="">
+                    <a href="#" class="text-white">FAQ</a>
+                </h4>
+            </div>
         </div>
     </div>
     <script>
         var acc = document.getElementsByClassName("accordion");
         var i;
         for (i = 0; i < acc.length; i++) {
-            acc[i].addEventListener("click", function() {
+            acc[i].addEventListener("click", function () {
                 this.classList.toggle("active");
                 var panel = this.nextElementSibling;
                 if (panel.style.display === "block") {
@@ -105,4 +192,5 @@
         </div>
     </div>
 </footer>
+
 </html>

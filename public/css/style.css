@@ -7,7 +7,12 @@
   color: #00B7FF;
 } */
 html, body {
-  min-height: 800px;
+  min-height: 700px;
+  
+}
+
+body.body-h900 {
+  height: 900px;
   position: relative;
 }
 
@@ -113,8 +118,8 @@ a {
 
 .item-deadline,
 .item-deadline-done {
-  margin: 1% 1% 0 1%;
-  padding: 1%;
+  /* margin: 1% 1% 0 1%; */
+  /* padding: 1%; */
   color: black;
 }
 
