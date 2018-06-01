@@ -8,6 +8,8 @@ var fs = require("fs");
 var hbs = require("hbs");
 var hbsUtils = require("hbs-utils")(hbs);
 
+var dbConnect = require("./models/dbConnection");
+
 var homeRouter = require("./routes/home");
 var studentRoute = require("./routes/studentRoute");
 var teacherRoute = require("./routes/teacherRoute");

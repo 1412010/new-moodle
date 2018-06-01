@@ -11,6 +11,10 @@ html, body {
   
 }
 
+body.home-body{
+  height: 600px;
+}
+
 body.body-h900 {
   height: 900px;
   position: relative;

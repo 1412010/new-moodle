@@ -1,78 +1,84 @@
-<div class="row" id="title">
-    <div class="col-md-5">
-        <input class="form-control exeName" placeholder="Tên bài tập" type="text">
+<div class="animated fadeIn">
+    <div class="row" id="title">
+        <div class="col-md-5">
+            <input class="form-control exeName" placeholder="Tên bài tập" type="text">
+        </div>
+        <div class="col-md-4"></div>
+        <span class="col-md-3" style="text-align: right">
+            <span class="btn btn-light" id="okAddExe">
+                <h3>
+                    <i style="color: greenyellow;" class="fas fa-check"></i>
+                </h3>
+            </span>
+            <span class="btn btn-light" id="backToCourse">
+                <h3>
+                    <i class="far fa-arrow-alt-circle-left"></i>
+                </h3>
+            </span>
+        </span>
     </div>
-    <div class="col-md-4"></div>
-    <span class="col-md-3" style="text-align: right">
-        <span class="btn btn-light" id="okAddExe">
-                <h3><i style="color: greenyellow;" class="fas fa-check"></i></h3>
-        </span>
-        <span class="btn btn-light" id="backToCourse">
-                <h3><i class="far fa-arrow-alt-circle-left"></i></h3>
-        </span>
-    </span>
-</div>
-<script>
-    $(function() {
-        $("#confirm_addExe").dialog({
-            resizable: false,
-            height: "auto",
-            width: 400,
-            modal: true,
-            autoOpen: false,
-            buttons: {
-            "Yes": function() {
-                $( this ).dialog( "close" );
-                loadCourse();
-            },
-            "No": function() {
-                $( this ).dialog( "close" );
-            }
-        }
+    <script>
+        $(function () {
+            $("#confirm_addExe").dialog({
+                resizable: false,
+                height: "auto",
+                width: 400,
+                modal: true,
+                autoOpen: false,
+                buttons: {
+                    "Yes": function () {
+                        $(this).dialog("close");
+                        loadCourse();
+                    },
+                    "No": function () {
+                        $(this).dialog("close");
+                    }
+                }
+            });
         });
-    });
-</script>
-<div id="confirm_addExe" title="Thêm bài tập">
-    </span>Bạn muốn thêm bài tập này?</p>
-</div>
-<div class="contentCourse" style="font-size: 18px;">
-    <div class="card">
-        <div class="card-body">
-            <p>
-                <div class="row">
-                <span class="col-md-2 verticalText">Hạn chót:</span>
-                <input class="col-md-3 form-control" type="date">
-                <span class="col-md-1 verticalText">Giờ:</span>
-                <input class="col-md-1 form-control" type="number" min="0" max="23">
-                <span class="col-md-1 verticalText">Phút:</span>
-                <input class="col-md-1 form-control" type="number" min="0" max="59">
-                </div>
-            </p>
-            <p>
-                <div class="row">
-                    <span class="col-md-2">Nội dung:</span>
-                    <textarea class="form-control col-md-9" rows="4" placeholder="Nhập nội dung"></textarea>
-                </div>
-            </p>
-            <p>Tài liệu:</p>
-            <div class="docZone">
-                <div class="dropZone">
-                    <!-- VÙNG KÉO THẢ FILE -->
-                    <div id="drop-zone" class="drop-zone">
-                        Có thể thêm các tập tin bằng cách kéo thả
+    </script>
+    <div id="confirm_addExe" title="Thêm bài tập">
+        </span>Bạn muốn thêm bài tập này?</p>
+    </div>
+    <div class="contentCourse" style="font-size: 18px;">
+        <div class="card">
+            <div class="card-body">
+                <p>
+                    <div class="row">
+                        <span class="col-md-2 verticalText">Hạn chót:</span>
+                        <input class="col-md-3 form-control" type="date">
+                        <span class="col-md-1 verticalText">Giờ:</span>
+                        <input class="col-md-1 form-control" type="number" min="0" max="23">
+                        <span class="col-md-1 verticalText">Phút:</span>
+                        <input class="col-md-1 form-control" type="number" min="0" max="59">
                     </div>
-                </div>
-                <div class="docButtonZone">
-                    <div class="image-button docIconMargin">
-                        <div  class="fa fa-paperclip docIcon"></div>
-                        <div class="docIconLabel">
-                            Thêm tập tin
+                </p>
+                <p>
+                    <div class="row">
+                        <span class="col-md-2">Nội dung:</span>
+                        <textarea class="form-control col-md-9" rows="4" placeholder="Nhập nội dung"></textarea>
+                    </div>
+                </p>
+                <p>Tài liệu:</p>
+                <div class="docZone">
+                    <div class="dropZone">
+                        <!-- VÙNG KÉO THẢ FILE -->
+                        <div id="drop-zone" class="drop-zone">
+                            Có thể thêm các tập tin bằng cách kéo thả
                         </div>
                     </div>
-                    <div class="image-button docIconMargin">
-                        <div class="fa fa-link docIcon"></div>
-                        <div class="docIconLabel">
-                            Chèn link
+                    <div class="docButtonZone">
+                        <div class="image-button docIconMargin">
+                            <div class="fa fa-paperclip docIcon"></div>
+                            <div class="docIconLabel">
+                                Thêm tập tin
+                            </div>
+                        </div>
+                        <div class="image-button docIconMargin">
+                            <div class="fa fa-link docIcon"></div>
+                            <div class="docIconLabel">
+                                Chèn link
+                            </div>
                         </div>
                     </div>
                 </div>
