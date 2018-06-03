@@ -46,11 +46,11 @@
                 <p>
                     <div class="row">
                         <span class="col-md-2 verticalText">Hạn chót:</span>
-                        <input class="col-md-3 form-control" type="date">
+                        <input id="ipDate" class="col-md-3 form-control" type="date">
                         <span class="col-md-1 verticalText">Giờ:</span>
-                        <input class="col-md-1 form-control" type="number" min="0" max="23">
+                        <input class="col-md-1 form-control" type="number" min="0" max="23" value="23">
                         <span class="col-md-1 verticalText">Phút:</span>
-                        <input class="col-md-1 form-control" type="number" min="0" max="59">
+                        <input class="col-md-1 form-control" type="number" min="0" max="59" value="55">
                     </div>
                 </p>
                 <p>
@@ -59,30 +59,27 @@
                         <textarea class="form-control col-md-9" rows="4" placeholder="Nhập nội dung"></textarea>
                     </div>
                 </p>
-                <p>Tài liệu:</p>
-                <div class="docZone">
-                    <div class="dropZone">
-                        <!-- VÙNG KÉO THẢ FILE -->
-                        <div id="drop-zone" class="drop-zone">
-                            Có thể thêm các tập tin bằng cách kéo thả
-                        </div>
+                <p>
+                    <div class="row">
+                        <span class="col-md-2">Max file size (MB):</span>
+                        <input class="col-md-1 form-control" type="number" min="0" max="100" value="20">
                     </div>
-                    <div class="docButtonZone">
-                        <div class="image-button docIconMargin">
-                            <div class="fa fa-paperclip docIcon"></div>
-                            <div class="docIconLabel">
-                                Thêm tập tin
-                            </div>
-                        </div>
-                        <div class="image-button docIconMargin">
-                            <div class="fa fa-link docIcon"></div>
-                            <div class="docIconLabel">
-                                Chèn link
-                            </div>
-                        </div>
+                </p>
+                <p>
+                    <div class="row">
+                        <span class="col-md-2">Tài liệu:</span>
+                        <button class="btn btn-light">
+                                <i class="fas fa-plus-circle" style="color:greenyellow; font-size:1.5em;"></i>
+                        </button>
                     </div>
-                </div>
+                </p>
             </div>
         </div>
     </div>
+    <script>        
+    var d = new Date();
+    var strDate = "";
+    strDate += d.getFullYear() + "-0" + (d.getMonth()+1) + "-0" + d.getDate();
+    $("#ipDate").val(strDate);
+    </script>
 </div>

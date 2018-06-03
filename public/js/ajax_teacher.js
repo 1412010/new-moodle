@@ -12,14 +12,29 @@ $(document).ready(function() {
         if (tmp == "true"){
             $("#addExe").removeAttr("hidden");
             $("#addExe").show();
+            $("#addNoti").removeAttr("hidden");
+            $("#addNoti").show();
+            $("#addDoc").removeAttr("hidden");
+            $("#addDoc").show();
             $("#addExe").attr("name", "false");
             $('#editBt1').removeAttr("hidden");
             $('#editBt1').show();
+            $('#editTb1').removeAttr("hidden");
+            $('#editTb1').show();
+            $('#editTl1').removeAttr("hidden");
+            $('#editTl1').show();
+            $('#editTl2').removeAttr("hidden");
+            $('#editTl2').show();
         }
         else {
             $("#addExe").hide();
+            $("#addNoti").hide();
+            $("#addDoc").hide();
             $("#addExe").attr("name", "true");
             $('#editBt1').hide();
+            $('#editTb1').hide();
+            $('#editTl1').hide();
+            $('#editTl2').hide();
         }
     });
 
