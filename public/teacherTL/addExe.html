@@ -1,7 +1,7 @@
 <div class="animated fadeIn">
     <div class="row" id="title">
         <div class="col-md-5">
-            <input class="form-control exeName" placeholder="Tên bài tập" type="text">
+            <input id="exeName" class="form-control exeName" placeholder="Tên bài tập" type="text">
         </div>
         <div class="col-md-4"></div>
         <span class="col-md-3" style="text-align: right">
@@ -28,6 +28,31 @@
                 buttons: {
                     "Yes": function () {
                         $(this).dialog("close");
+                        var baitapmoi = {};
+                        baitapmoi.name = $("#exeName").val();
+                        baitapmoi.lastUpdate = new Date();
+                        baitapmoi.deadline = {
+                            date: $("#ipDate").val().toString().slice(8, 10),
+                            month: $("#ipDate").val().toString().slice(5, 7),
+                            year: $("#ipDate").val().toString().slice(0, 4),
+                            hour: $("#ipHour").val(),
+                            minute: $("#ipMinute").val()
+                        };
+                        baitapmoi.maxsize = $("#ipMaxSize").val();
+                        baitapmoi.content = $("#ipContent").val();
+                        var fn = $("#upFileName").html();
+                        if (fn !== "none")
+                            baitapmoi.fileName = fn;
+                        else
+                            baitapmoi.fileName = "";
+                        $.ajax({
+                            url: "/teacher/api/khoahoc/baitap",
+                            data: {newExe: baitapmoi},
+                            type: "PUT",
+                            success: function (rs) {
+                                console.log("them bai tap ok");
+                            }
+                        });
                         loadCourse();
                     },
                     "No": function () {
@@ -48,21 +73,21 @@
                         <span class="col-md-2 verticalText">Hạn chót:</span>
                         <input id="ipDate" class="col-md-3 form-control" type="date">
                         <span class="col-md-1 verticalText">Giờ:</span>
-                        <input class="col-md-1 form-control" type="number" min="0" max="23" value="23">
+                        <input id="ipHour" class="col-md-1 form-control" type="number" min="0" max="23" value="23">
                         <span class="col-md-1 verticalText">Phút:</span>
-                        <input class="col-md-1 form-control" type="number" min="0" max="59" value="55">
+                        <input id="ipMinute" class="col-md-1 form-control" type="number" min="0" max="59" value="55">
                     </div>
                 </p>
                 <p>
                     <div class="row">
                         <span class="col-md-2">Nội dung:</span>
-                        <textarea class="form-control col-md-9" rows="4" placeholder="Nhập nội dung"></textarea>
+                        <textarea id="ipContent" class="form-control col-md-9" rows="4" placeholder="Nhập nội dung"></textarea>
                     </div>
                 </p>
                 <p>
                     <div class="row">
                         <span class="col-md-2">Max file size (MB):</span>
-                        <input class="col-md-1 form-control" type="number" min="0" max="100" value="20">
+                        <input id="ipMaxSize" class="col-md-1 form-control" type="number" min="0" max="100" value="20">
                     </div>
                 </p>
                 <p>Tài liệu:</p>
@@ -85,10 +110,10 @@
                 <div id="listFile" class="container-fluid mt-3" hidden>
                     <div class="row">
                         <span class='col-md-4'><strong>Tên file</strong></span>
-                        <span class='col-md-7'><strong>Link để chèn vào nội dung</strong></span>
+                        <span class='col-md-7'><strong>Click để copy link</strong></span>
                     </div>
                     <div class="row">
-                            <span class='col-md-4' id="upFileName"></span>
+                            <span class='col-md-4' id="upFileName">none</span>
                             <span class='col-md-7' id="upFileLink" style="color: dodgerblue"></span>
                             <span class='col-md-1' id="removeUpFile">
                                 <i style="color: red; cursor: pointer;" class="far fa-trash-alt"></i>
