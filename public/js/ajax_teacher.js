@@ -17,8 +17,8 @@ $(document).ready(function() {
             $("#addDoc").removeAttr("hidden");
             $("#addDoc").show();
             $("#addExe").attr("name", "false");
-            $('#editBt1').removeAttr("hidden");
-            $('#editBt1').show();
+            $('.editBt1').removeAttr("hidden");
+            $('.editBt1').show();
             $('#editTb1').removeAttr("hidden");
             $('#editTb1').show();
             $('#editTl1').removeAttr("hidden");
@@ -31,7 +31,7 @@ $(document).ready(function() {
             $("#addNoti").hide();
             $("#addDoc").hide();
             $("#addExe").attr("name", "true");
-            $('#editBt1').hide();
+            $('.editBt1').hide();
             $('#editTb1').hide();
             $('#editTl1').hide();
             $('#editTl2').hide();
