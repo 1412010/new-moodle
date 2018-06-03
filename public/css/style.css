@@ -146,7 +146,7 @@ a {
 }
 
 .button {
-  width: 18vh;
+  width: 15vh;
   height: 100%;
 }
 
@@ -158,6 +158,11 @@ a {
   background: #EFEFEF;
   text-align: center;
   padding: 6%;
+}
+
+.drop-zone-have-file {
+  background: #EFEFEF;
+  padding: 2%;
 }
 
 .drop-zone-hover {
