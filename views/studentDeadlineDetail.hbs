@@ -77,24 +77,25 @@
                     </div>
                     <div style="display: flex; background: #CCCCCC; text-align: center;padding: 1%;">
                         <div class="image-button">
+                            <input type="file" style="display: none;"></input>
                             <div class="fa fa-paperclip" style="font-size: 150%; padding-top: 3%;">
                             </div>
                             <div style="padding-bottom: 3%;">
                                 Thêm tập tin
                             </div>
                         </div>
-                        <div class="image-button" style="margin-left: 1%;">
+                        <!-- <div class="image-button" style="margin-left: 1%;">
                             <div class="fa fa-link" style="font-size: 150%; padding-top: 3%;">
                             </div>
                             <div style="padding-bottom: 3%;">
                                 Chèn link
                             </div>
-                        </div>
-                        <form action="/student/course/kh1" method="GET" style="margin-left: auto; margin-right: 0;">
-                            <button id="submit-button" class="button" disabled>Nộp bài</button>
+                        </div> -->
+                        <form action="/student/course/kh1" method="GET" style="margin-left: auto; margin-right: 2%; margin-top: 1%; margin-bottom: 1%;">
+                            <button id="submit-button" class="button btn btn-info" disabled>Nộp bài</button>
                         </form>
-                        <form action="/student/course/kh1" method="GET" style="margin-left: 1%; margin-right: 1%;">
-                            <button class="button">Hủy</button>
+                        <form action="/student/course/kh1" method="GET" style="margin-left: 1%; margin-right: 2%; margin-top: 1%; margin-bottom: 1%;">
+                            <button class="button btn btn-default">Hủy</button>
                         </form>
                     </div>
                 </div>
@@ -117,7 +118,7 @@
     </div>
     <script>
         function dropHandler(ev) {
-            console.log('File(s) dropped');
+            //console.log('File(s) dropped');
 
             // Prevent default behavior (Prevent file from being opened)
             ev.preventDefault();
@@ -125,46 +126,51 @@
             document.getElementById("submit-button").disabled = false;
             document.getElementById("drop-zone").innerHTML = "";
 
+            var fileName = "";
+            var button = '<button class="fa fa-times-circle" style="background: none; border: none; color: red;" onclick="if (this.parentNode.parentNode.childNodes.length == 1){document.getElementById(' + "'drop-zone'" + ').className = ' + "'drop-zone';document.getElementById(" + "'drop-zone'" + ").innerHTML = " + "'Có thể thêm các tập tin bằng cách kéo thả';}this.parentNode.remove();" +'"></button>';
+
             if (ev.dataTransfer.items) {
                 // Use DataTransferItemList interface to access the file(s)
                 for (var i = 0; i < ev.dataTransfer.items.length; i++) {
                     // If dropped items aren't files, reject them
                     if (ev.dataTransfer.items[i].kind === 'file') {
                         var file = ev.dataTransfer.items[i].getAsFile();
-                        console.log('... file[' + i + '].name = ' + file.name);
-                        document.getElementById("drop-zone").innerHTML += file.name + "<br/>";
+                        //console.log('... file[' + i + '].name = ' + file.name);
+                        fileName += "<div>" + button + file.name + "</div>";
                     }
                 }
             } else {
                 // Use DataTransfer interface to access the file(s)
                 for (var i = 0; i < ev.dataTransfer.files.length; i++) {
-                    console.log('... file[' + i + '].name = ' + ev.dataTransfer.files[i].name);
-                    document.getElementById("drop-zone").innerHTML += ev.dataTransfer.files[i].name + "<br/>";
+                    //console.log('... file[' + i + '].name = ' + ev.dataTransfer.files[i].name);
+                    fileName +="<div>" + button + ev.dataTransfer.files[i].name + "</div>";
                 }
             }
+            document.getElementById("drop-zone").innerHTML = fileName;
+            ev.target.className = "drop-zone-have-file";
 
             // Pass event to removeDragData for cleanup
             removeDragData(ev)
         }
 
         function dragOverHandler(ev) {
-            console.log('File(s) in drop zone');
+            //console.log('File(s) in drop zone');
             // Prevent default behavior (Prevent file from being opened)
-
             ev.preventDefault();
-            ev.target.className = "drop-zone-hover";
+            if (ev.target.id == "drop-zone")
+                ev.target.className = "drop-zone-hover";
         }
 
         function dragLeaveHandler(ev) {
-            console.log('File(s) in leave zone');
+            //console.log('File(s) in leave zone');
             // Prevent default behavior (Prevent file from being opened)
-
             ev.preventDefault();
-            ev.target.className = "drop-zone";
+            if (ev.target.id == "drop-zone")
+                ev.target.className = "drop-zone";
         }
 
         function removeDragData(ev) {
-            console.log('Removing drag data')
+            //console.log('Removing drag data')
 
             if (ev.dataTransfer.items) {
                 // Use DataTransferItemList interface to remove the drag data
