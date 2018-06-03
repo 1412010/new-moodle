@@ -65,14 +65,66 @@
                         <input class="col-md-1 form-control" type="number" min="0" max="100" value="20">
                     </div>
                 </p>
-                <p>
-                    <div class="row">
-                        <span class="col-md-2">Tài liệu:</span>
-                        <button class="btn btn-light">
-                                <i class="fas fa-plus-circle" style="color:greenyellow; font-size:1.5em;"></i>
-                        </button>
+                <p>Tài liệu:</p>
+                <div class="input-group">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="customFile">
+                        <label class="custom-file-label" for="customFile">Choose file</label>
                     </div>
-                </p>
+                    <div class="input-group-append">
+                            <button id="btnUpFile" class="btn btn-success">Upload</button>
+                    </div>
+                </div>
+                <script>
+                        $('#customFile').on('change',function(){
+                            var fileName = $(this).val();
+                            fileName = fileName.substring(fileName.lastIndexOf("\\") + 1, fileName.length);
+                            $(this).next('.custom-file-label').html(fileName);
+                        })
+                </script>
+                <div id="listFile" class="container-fluid mt-3" hidden>
+                    <div class="row">
+                        <span class='col-md-4'><strong>Tên file</strong></span>
+                        <span class='col-md-7'><strong>Link để chèn vào nội dung</strong></span>
+                    </div>
+                    <div class="row">
+                            <span class='col-md-4' id="upFileName"></span>
+                            <span class='col-md-7' id="upFileLink" style="color: dodgerblue"></span>
+                            <span class='col-md-1' id="removeUpFile">
+                                <i style="color: red; cursor: pointer;" class="far fa-trash-alt"></i>
+                            </span>
+                        </div>
+                </div>
+                <script>
+                    $("#btnUpFile").on("click", function (event) {
+                        event.preventDefault();
+                        var fName = $("#customFile").next('.custom-file-label').html();
+                        if (fName=="Choose file")
+                        {
+                            alert("Bạn chưa chọn file!");
+                            return;
+                        }
+                        $("#upFileName").text(fName);
+                        $("#upFileLink").text("<a href='/download/" + encodeURI(fName) + "'></a>");
+                        $("#listFile").removeAttr("hidden");
+                        $("#listFile").show();
+                    });
+                    $("#removeUpFile").on('click', function(event){
+                        event.preventDefault();
+                        $('#listFile').hide();
+                    });
+                    function copyToClipboard(element) {
+                        var $temp = $("<input>");
+                        $("body").append($temp);
+                        $temp.val($(element).text()).select();
+                        document.execCommand("copy");
+                        $temp.remove();
+                    }
+                    $("#upFileLink").on('click', function(event){
+                        event.preventDefault();
+                        copyToClipboard("#upFileLink");
+                    });
+                </script>
             </div>
         </div>
     </div>

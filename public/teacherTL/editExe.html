@@ -75,7 +75,7 @@ $("#confirm_edit").dialog({
             <p>
                 <div class="row">
                     <span class="col-md-2">Nội dung:</span>
-                    <textarea class="form-control col-md-9" rows="5" placeholder="Nhập nội dung">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    <textarea class="form-control col-md-9" rows="5" placeholder="Nhập nội dung">Làm theo yêu cầu <a href='/download/B%C3%A0i%20t%E1%BA%ADp%20A.txt'>đề bài</a>.
                     </textarea>
                 </div>
             </p>
@@ -86,28 +86,65 @@ $("#confirm_edit").dialog({
                     </div>
                 </p>
             <p>Tài liệu:</p>
-            <div class="docZone">
-                <div class="dropZone">
-                    <!-- VÙNG KÉO THẢ FILE -->
-                    <div id="drop-zone" class="drop-zone">
-                        Có thể thêm các tập tin bằng cách kéo thả
-                    </div>
+            <div class="input-group">
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="customFile">
+                    <label class="custom-file-label" for="customFile">Choose file</label>
                 </div>
-                <div class="docButtonZone">
-                    <div class="image-button docIconMargin">
-                        <div  class="fa fa-paperclip docIcon"></div>
-                        <div class="docIconLabel">
-                            Thêm tập tin
-                        </div>
-                    </div>
-                    <div class="image-button docIconMargin">
-                        <div class="fa fa-link docIcon"></div>
-                        <div class="docIconLabel">
-                            Chèn link
-                        </div>
-                    </div>
+                <div class="input-group-append">
+                        <button id="btnUpFile" class="btn btn-success">Upload</button>
                 </div>
             </div>
+            <script>
+                $('#customFile').on('change',function(){
+                    var fileName = $(this).val();
+                    fileName = fileName.substring(fileName.lastIndexOf("\\") + 1, fileName.length);
+                    $(this).next('.custom-file-label').html(fileName);
+                })
+            </script>
+            <div id="listFile" class="container-fluid mt-3">
+                <div class="row">
+                    <span class='col-md-4'><strong>Tên file</strong></span>
+                    <span class='col-md-7'><strong>Link để chèn vào nội dung</strong></span>
+                </div>
+                <div class="row">
+                        <span class='col-md-4' id="upFileName">Bài tập A</span>
+                        <span class='col-md-7' id="upFileLink" style="color: dodgerblue">&lta href='/download/B%C3%A0i%20t%E1%BA%ADp%20A.txt'>&lt/a></span>
+                        <span class='col-md-1' id="removeUpFile">
+                            <i style="color: red; cursor: pointer;" class="far fa-trash-alt"></i>
+                        </span>
+                    </div>
+            </div>
+            <script>
+                $("#btnUpFile").on("click", function (event) {
+                    event.preventDefault();
+                    var fName = $("#customFile").next('.custom-file-label').html();
+                    if (fName=="Choose file")
+                    {
+                        alert("Bạn chưa chọn file!");
+                        return;
+                    }
+                    $("#upFileName").text(fName);
+                    $("#upFileLink").text("<a href='/download/" + encodeURI(fName) + "'></a>");
+                    $("#listFile").removeAttr("hidden");
+                    $("#listFile").show();
+                });
+                $("#removeUpFile").on('click', function(event){
+                    event.preventDefault();
+                    $('#listFile').hide();
+                });
+                function copyToClipboard(element) {
+                    var $temp = $("<input>");
+                    $("body").append($temp);
+                    $temp.val($(element).text()).select();
+                    document.execCommand("copy");
+                    $temp.remove();
+                }
+                $("#upFileLink").on('click', function(event){
+                    event.preventDefault();
+                    copyToClipboard("#upFileLink");
+                });
+            </script>
         </div>
     </div>
 </div>
