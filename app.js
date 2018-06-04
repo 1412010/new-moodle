@@ -28,6 +28,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
+// giao vien data
+global.giaoVien = {};
+require('./config/giaoviendata');
+
 // register all partials
 var partialsDir = __dirname + "/views/partials";
 
