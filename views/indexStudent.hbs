@@ -8,6 +8,8 @@
     <link rel='stylesheet' href='/css/breadcrumbs.css' />
     <link rel='stylesheet' href='/assets/bootstrap/dist/css/bootstrap.min.css' />
     <link rel='stylesheet' href="/assets/fontawesome-all.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets//zabuto_calendar.min.css">
+
 </head>
 
 <body class="body-h900">
@@ -29,13 +31,13 @@
                         </a>
                     </li>
                 </ul>
-               
+
                 <h1>Các khóa học của tôi</h1>
 
                 <!-- DS các khóa học -->
-                <div style="margin-top: 4%; padding-left: 5%; padding-right: 5%;">
+                <div style="margin-top: 4%; padding-left: 2%; padding-right: 5%;">
                     <!-- Khóa học 1 -->
-                    <a href="/student/course/kh1">
+                    <a href="/student/course/kh1" role="button">
                         <div class="row list-item" style="margin-top: 2%;">
                             <div class="col-md-11">
                                 Khóa học 1
@@ -48,7 +50,7 @@
                         </div>
                     </a>
                     <!-- Khóa học 2 -->
-                    <a href="/student/course/kh2">
+                    <a href="/student/course/kh2" role="button">
                         <div class="row list-item" style="margin-top: 2%;">
                             <div class="col-md-11">
                                 Khóa học 2
@@ -68,20 +70,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
     <script src="/assets/bootstrap/dist/js/bootstrap.min.js"></script>
-    <div class="footer">
-        <div class="row">
-            <div class="col-md text-center">
-                <h4 class="">
-                    <a class="text-white" href="#">Hỗ trợ</a>
-                </h4>
-            </div>
-            <div class="col-md text-center">
-                <h4 class="">
-                    <a href="#" class="text-white">FAQ</a>
-                </h4>
-            </div>
-        </div>
-    </div>
+    <script src="/assets/zabuto_calendar.min.js"></script>
+    <script src="/js/sidebar.js"></script>
+    {{> footer}}
     </bod>
 
 

@@ -8,6 +8,7 @@
     <link rel='stylesheet' href='/css/animate.css' />
     <link rel='stylesheet' href='/assets/bootstrap/dist/css/bootstrap.min.css' />
     <link rel='stylesheet' href="/assets/fontawesome-all.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets//zabuto_calendar.min.css">
 </head>
 
 <body class="body-h900">
@@ -36,86 +37,83 @@
                     </li>
                 </ul>
 
-                <!--THÔNG TIN BÀI TẬP-->
-                <h1>Bài tập 2</h1>
-                <div style="margin-top: 2%; font-size: 130%;">
-                    <div class="row">
-                        <div class="col-md-2">
-                            Hạn chót:
-                        </div>
-                        <div class="col-md-9">
-                            23h55 - 26/3/2018
-                        </div>
+                <div class="card">
+                    <div class="card card-header">
+                        <h2>Bài tập 2</h2>
                     </div>
-                    <div class="row">
-                        <div class="col-md-2">
-                            Trạng thái:
-                        </div>
-                        <div class="col-md-9">
-                            Chưa nộp
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-2">
-                            Nội dung:
-                        </div>
-                        <div class="col-md-9" style="text-align: justify">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </div>
-                    </div>
-                </div>
-                <!-- KHUNG NỘP BÀI -->
-                <div style="margin: 5% 5% 0 5%;">
-                    <div style="background: #D9D9D9;padding: 1%;">
-                        <!-- VÙNG KÉO THẢ FILE -->
-                        <div id="drop-zone" class="drop-zone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);" ondragleave="dragLeaveHandler(event)">
-                            Có thể thêm các tập tin bằng cách kéo thả
-                        </div>
-                    </div>
-                    <div style="display: flex; background: #CCCCCC; text-align: center;padding: 1%;">
-                        <div class="image-button">
-                            <input type="file" style="display: none;"></input>
-                            <div class="fa fa-paperclip" style="font-size: 150%; padding-top: 3%;">
+                    <div class="card card-body">
+                        <div style="margin-top: 2%; font-size: 130%;">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    Hạn chót:
+                                </div>
+                                <div class="col-md-9">
+                                    23h55 - 08/06/2018
+                                </div>
                             </div>
-                            <div style="padding-bottom: 3%;">
-                                Thêm tập tin
+                            <div class="row">
+                                <div class="col-md-2">
+                                    Trạng thái:
+                                </div>
+                                <div class="col-md-9">
+                                    Chưa nộp
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2">
+                                    Nội dung:
+                                </div>
+                                <div class="col-md-9" style="text-align: justify">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                                    ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                                    sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                </div>
                             </div>
                         </div>
-                        <!-- <div class="image-button" style="margin-left: 1%;">
+                        <!-- KHUNG NỘP BÀI -->
+                        <div style="margin: 5% 5% 0 5%;">
+                            <div style="background: #D9D9D9;padding: 1%;">
+                                <!-- VÙNG KÉO THẢ FILE -->
+                                <div id="drop-zone" class="drop-zone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);" ondragleave="dragLeaveHandler(event)">
+                                    Có thể thêm các tập tin bằng cách kéo thả
+                                </div>
+                            </div>
+                            <div style="display: flex; background: #CCCCCC; text-align: center;padding: 1%;">
+                                <div class="image-button">
+                                    <input type="file" style="display: none;"></input>
+                                    <div class="fa fa-paperclip" style="font-size: 150%; padding-top: 3%;">
+                                    </div>
+                                    <div style="padding-bottom: 3%;">
+                                        Thêm tập tin
+                                    </div>
+                                </div>
+                                <!-- <div class="image-button" style="margin-left: 1%;">
                             <div class="fa fa-link" style="font-size: 150%; padding-top: 3%;">
                             </div>
                             <div style="padding-bottom: 3%;">
                                 Chèn link
                             </div>
                         </div> -->
-                        <form action="/student/course/kh1" method="GET" style="margin-left: auto; margin-right: 2%; margin-top: 1%; margin-bottom: 1%;">
-                            <button id="submit-button" class="button btn btn-info" disabled>Nộp bài</button>
-                        </form>
-                        <form action="/student/course/kh1" method="GET" style="margin-left: 1%; margin-right: 2%; margin-top: 1%; margin-bottom: 1%;">
-                            <button class="button btn btn-default">Hủy</button>
-                        </form>
+                                <form action="/student/course/kh1" method="GET" style="margin-left: auto; margin-right: 2%; margin-top: 1%; margin-bottom: 1%;">
+                                    <button id="submit-button" class="button btn btn-info" disabled>Nộp bài</button>
+                                </form>
+                                <form action="/student/course/kh1" method="GET" style="margin-left: 1%; margin-right: 2%; margin-top: 1%; margin-bottom: 1%;">
+                                    <button class="button btn btn-default">Hủy</button>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <!--THÔNG TIN BÀI TẬP-->
+
+
             </main>
         </div>
     </div>
-    <div class="footer">
-        <div class="row">
-            <div class="col-md text-center">
-                <h4 class="">
-                    <a class="text-white" href="#">Hỗ trợ</a>
-                </h4>
-            </div>
-            <div class="col-md text-center">
-                <h4 class="">
-                    <a href="#" class="text-white">FAQ</a>
-                </h4>
-            </div>
-        </div>
-    </div>
+    {{> footer}}
+
     <script>
         function dropHandler(ev) {
             //console.log('File(s) dropped');
@@ -127,7 +125,7 @@
             document.getElementById("drop-zone").innerHTML = "";
 
             var fileName = "";
-            var button = '<button class="fa fa-times-circle" style="background: none; border: none; color: red;" onclick="if (this.parentNode.parentNode.childNodes.length == 1){document.getElementById(' + "'drop-zone'" + ').className = ' + "'drop-zone';document.getElementById(" + "'drop-zone'" + ").innerHTML = " + "'Có thể thêm các tập tin bằng cách kéo thả';}this.parentNode.remove();" +'"></button>';
+            var button = '<button class="fa fa-times-circle" style="background: none; border: none; color: red;" onclick="if (this.parentNode.parentNode.childNodes.length == 1){document.getElementById(' + "'drop-zone'" + ').className = ' + "'drop-zone';document.getElementById(" + "'drop-zone'" + ").innerHTML = " + "'Có thể thêm các tập tin bằng cách kéo thả';}this.parentNode.remove();" + '"></button>';
 
             if (ev.dataTransfer.items) {
                 // Use DataTransferItemList interface to access the file(s)
@@ -143,7 +141,7 @@
                 // Use DataTransfer interface to access the file(s)
                 for (var i = 0; i < ev.dataTransfer.files.length; i++) {
                     //console.log('... file[' + i + '].name = ' + ev.dataTransfer.files[i].name);
-                    fileName +="<div>" + button + ev.dataTransfer.files[i].name + "</div>";
+                    fileName += "<div>" + button + ev.dataTransfer.files[i].name + "</div>";
                 }
             }
             document.getElementById("drop-zone").innerHTML = fileName;
@@ -185,6 +183,8 @@
     <script src="/assets/jquery-3.3.1.min.js"></script>
     <script src="/assets/popper.min.js"></script>
     <script src="/assets/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/assets/zabuto_calendar.min.js"></script>
+    <script src="/js/sidebar.js"></script>
 </body>
 <footer>
     <div class="row">

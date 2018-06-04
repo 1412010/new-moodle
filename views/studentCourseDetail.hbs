@@ -8,6 +8,8 @@
     <link rel='stylesheet' href='/css/animate.css' />
     <link rel='stylesheet' href='/assets/bootstrap/dist/css/bootstrap.min.css' />
     <link rel='stylesheet' href="/assets/fontawesome-all.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets//zabuto_calendar.min.css">
+
 </head>
 
 <body class="body-h900">
@@ -114,7 +116,9 @@
                                         </div>
                                         <div class="card-text" id="labBt1" style="cursor: pointer;">
                                             <p>Hạn chót: 23h55 - 6/3/2018</p>
-                                            <p>Trạng thái: Đã nộp <span style="margin-left: 5%;">Lần cập nhật cuối: 23h54 - 6/3/2018</span></p>   
+                                            <p>Trạng thái: Đã nộp
+                                                <span style="margin-left: 5%;">Lần cập nhật cuối: 23h54 - 6/3/2018</span>
+                                            </p>
                                         </div>
                                     </div>
                                 </a>
@@ -124,7 +128,8 @@
                 </div>
 
 
-                {{!-- <div style="margin-top: 3%; padding-left: 5%; padding-right: 5%;">
+                {{!--
+                <div style="margin-top: 3%; padding-left: 5%; padding-right: 5%;">
 
                     <!-- BÀI TẬP -->
                     <button class="accordion" id="accordionBTN">Bài tập</button>
@@ -151,20 +156,8 @@
             </main>
         </div>
     </div>
-    <div class="footer">
-        <div class="row">
-            <div class="col-md text-center">
-                <h4 class="">
-                    <a class="text-white" href="#">Hỗ trợ</a>
-                </h4>
-            </div>
-            <div class="col-md text-center">
-                <h4 class="">
-                    <a href="#" class="text-white">FAQ</a>
-                </h4>
-            </div>
-        </div>
-    </div>
+    {{> footer}}
+
     <script>
         var acc = document.getElementsByClassName("accordion");
         var i;
@@ -183,20 +176,8 @@
     <script src="/assets/jquery-3.3.1.min.js"></script>
     <script src="/assets/popper.min.js"></script>
     <script src="/assets/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/assets/zabuto_calendar.min.js"></script>
+    <script src="/js/sidebar.js"></script>
 </body>
-<footer>
-    <div class="row">
-        <div class="col-md text-center">
-            <h4 class="">
-                <a class="text-white" href="#">Hỗ trợ</a>
-            </h4>
-        </div>
-        <div class="col-md text-center">
-            <h4 class="">
-                <a href="#" class="text-white">FAQ</a>
-            </h4>
-        </div>
-    </div>
-</footer>
 
 </html>

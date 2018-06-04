@@ -7,11 +7,11 @@
     <link rel='stylesheet' href='/css/breadcrumbs.css' />
     <link rel='stylesheet' href='/assets/bootstrap/dist/css/bootstrap.min.css' />
     <link rel='stylesheet' href="/assets/fontawesome-all.min.css" />
-    <link rel='stylesheet' href="/assets/jqueryUI/jquery-ui.min.css">
-    {{!-- <link rel='stylesheet' href="/assets/jqueryUI/jquery-ui.structure.min.css">
+    <link rel='stylesheet' href="/assets/jqueryUI/jquery-ui.min.css"> {{!--
+    <link rel='stylesheet' href="/assets/jqueryUI/jquery-ui.structure.min.css">
     <link rel='stylesheet' href="/assets/jqueryUI/jquery-ui.theme.min.css"> --}}
     <link rel='stylesheet' href="/css/teacherStyle.css">
-
+    <link rel="stylesheet" type="text/css" href="/assets//zabuto_calendar.min.css">
     <script src="/js/teacherLoad.js"></script>
 </head>
 
@@ -19,46 +19,24 @@
     {{> navbar}}
     <div class="container-fluid mt-5">
         <div class="row">
-            {{> sidebar}} 
-            <main role="main" class="col-md-9 ml-sm-auto px-4"> 
+            {{> sidebar}}
+            <main role="main" class="col-md-9 ml-sm-auto px-4">
                 {{!-- Breadcrumb --}}
                 <ul id="breadcrumb" class="mb-0 pl-3"></ul>
                 <div class="container-fluid" id="data"></div>
             </main>
         </div>
     </div>
-    <div class="footer">
-        <div class="row">
-            <div class="col-md text-center">
-                <h4 class="">
-                    <a class="text-white" href="#">Hỗ trợ</a>
-                </h4>
-            </div>
-            <div class="col-md text-center">
-                <h4 class="">
-                    <a href="#" class="text-white">FAQ</a>
-                </h4>
-            </div>
-        </div>
-    </div>
+    {{> footer}}
+
     <script src="/assets/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
     <script src="/assets/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="/assets/jqueryUI/jquery-ui.min.js"></script>
     <script src="/js/ajax_teacher.js"></script>
+    <script src="/assets/zabuto_calendar.min.js"></script>
+    <script src="/js/sidebar.js"></script>
 </body>
-<footer>
-    <div class="row">
-        <div class="col-md text-center">
-            <h4 class="">
-                <a class="text-white" href="#">Hỗ trợ</a>
-            </h4>
-        </div>
-        <div class="col-md text-center">
-            <h4 class="">
-                <a href="#" class="text-white">FAQ</a>
-            </h4>
-        </div>
-    </div>
-</footer>
+
 </html>

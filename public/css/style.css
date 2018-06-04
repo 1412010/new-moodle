@@ -16,7 +16,7 @@ body.home-body{
 }
 
 body.body-h900 {
-  height: 900px;
+  height: 1000px;
   position: relative;
 }
 
@@ -239,7 +239,7 @@ body.home-body {
 }
 
 .footer {
-  background-color: #6BCDFE;
+  background-color: #676CFB;
   position: absolute;
   width: 100%;
   bottom: 0;
