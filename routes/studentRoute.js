@@ -6,7 +6,9 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/course/:id', function(req, res, next) {
-  res.render("studentCourseDetail", {courseTitle: req.params.id});
+  if (req.params.id == 'kh3')
+  res.render("deadlineStudentSubmited", {});
+  else res.render("studentCourseDetail", {courseTitle: req.params.id});
 });
 
 router.get('/deadline/:id', function(req, res, next) {
